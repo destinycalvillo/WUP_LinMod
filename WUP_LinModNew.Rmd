@@ -35,12 +35,35 @@ data <- read.csv(file="https://onlinestatbook.com/case_studies_rvls/physical_str
 
 ### scatterplot
 
+```{r}
+basicNN <- ggplot(data,aes(y=SIMS,x=ARM))
+```
+```{r}
+basicNN + geom_point()
+```
+
+The Y-axis is SIMS and the X-axis is ARM. This plot shows that there is a positive linear correlation. The plot above displays a positive correlation between ARM and SIMS.
+
 ### Numerical results
 
+```{r}
+cor(SIMS~ARM,data=data)
+```
+
+Above is the value of correlation, the value is 0.68. Since the value is a positive number, we should expect the sea of points to go uphill towards the right. We can also verify this in the scatter-plots from earlier.
 
 ### Inferential  (Build model.1)
 
+```{r}
+model.1 <- lm(SIMS~ARM,data=data)
+summary.lm(model.1)
+```
+
+For the inferential results, we can see that the Adjusted R-Square is bigger, which means that more errors were reduced. To calculate SIMS based on ARM strength, we would use the equation of a line. The equation that best fits this is SIMS= -4.1 + 0.05 * R. The formula needed is y= mx + b to create the corresponding line. The Adjusted R-squared is the number to look at, which shows that the error was reduced by an estimated 47% or 0.467. Also, the prediction interval is between 1.226. There is a 145 degrees of freedom, which indicates the amount of data points or dots that there are in the plot.
+
 #### Predict at target point
+
+
 
 
 #### scatterplot with model fit
