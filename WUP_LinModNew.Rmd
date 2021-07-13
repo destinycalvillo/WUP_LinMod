@@ -63,11 +63,20 @@ For the inferential results, we can see that the Adjusted R-Square is bigger, wh
 
 #### Predict at target point
 
+```{r}
+newdata = data.frame(GRIP = 94, ARM = 88)
+predict(model.1, newdata, interval = "prediction")
+```
 
-
+Above is the prediction interval given the targeted points. Meaning that it shows how far one point varies from the other. Furthermore, we'd end up with an approx amount of 2.3 if we were to subtract the upper and fit. 
 
 #### scatterplot with model fit
-  
+ 
+```{r}
+basicNN + geom_point( ) + geom_smooth(method=lm)
+```   
+
+Just by simply looking at the plot, it appears that the value of the Y-intercept would be around 1 or 1.25. The dots presented are apart of the regression line which was formed using the formula of a line. To calculate SIMS based on ARM strength, we would use the equation of a line. The equation that best fits this is SIMS= -4.1 + 0.05 * R. The formula needed is y= mx + b to create the corresponding line. Each point represents an output of the standard deviation within the normal distribution.
 
 ## Model 2 SIM~GRIP
 
