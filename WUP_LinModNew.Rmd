@@ -42,7 +42,7 @@ basicNN <- ggplot(data,aes(y=SIMS,x=ARM))
 basicNN + geom_point()
 ```
 
-The Y-axis is SIMS and the X-axis is ARM. This plot shows that there is a positive linear correlation. The plot above displays a positive correlation between ARM and SIMS.
+The Y-axis is SIMS and the X-axis is ARM. This plot shows that there is a positive linear correlation. It displays a positive relationship between ARM and SIMS.
 
 ### Numerical results
 
@@ -82,6 +82,14 @@ Just by simply looking at the plot, it appears that the value of the Y-intercept
 
 ### Now add in scatterplot
 
+```{r}
+basicNN <- ggplot(data,aes(y=SIMS,x=GRIP))
+```
+```{r}
+basicNN + geom_point()
+```
+
+The Y-axis is SIMS and the X-axis is GRIP. This plot shows that there is a positive linear correlation. It displays a positive relationship between GRIP and SIMS.
 
 ### Numerical results 
 
@@ -112,4 +120,5 @@ Just by simply looking at the plot, it appears that the value of the Y-intercept
 ### Model.2 vs Model.3
 
 ## Informally compare Model.1 with model.2
+
 
