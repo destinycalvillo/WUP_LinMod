@@ -93,9 +93,20 @@ The Y-axis is SIMS and the X-axis is GRIP. This plot shows that there is a posit
 
 ### Numerical results 
 
+```{r}
+cor(SIMS~GRIP,data=data)
+```
+
+Above is the value of the correlation, which is an estimated 0.64. Since the value is a positive number, we should expect the group of points to go towards the right. The higher the correlation means the closer the points are together. 
 
 ### Inferential  (Build model.2)
   
+```{r}
+model.2 <- lm(SIMS~GRIP,data=data)
+summary.lm(model.2)
+```
+
+For the inferential results, we can see that the Adjusted R-Square is 0.4053. The Adjusted R-squared is the number to look at, which shows that the error was reduced by an estimated 40% or 0.4053. To calculate SIMS based on     GRIP strength, we would use the equation of a line. The formula needed is y= mx + b to create the corresponding line. There is a 145 degrees of freedom, which indicates the amount of data points or dots that there are in the plot.
 
 #### predict model.2 at target point
 
@@ -121,4 +132,4 @@ The Y-axis is SIMS and the X-axis is GRIP. This plot shows that there is a posit
 
 ## Informally compare Model.1 with model.2
 
-
+In the scatter-plots alone, we can simply see that the points are more closer to each other in Model 2 than in Model 1. Yet, once we determined the numerical results we seen that the Model 2 correlation was a bit smaller than the Model 1 correlation. In the inferential results, we see that Model 2 wasn't as good as Model 1 since the standard deviation is larger. There is a difference between the Multiple R-squared and adjusted R-squared.  
